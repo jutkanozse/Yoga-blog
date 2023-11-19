@@ -1,0 +1,20 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <%- include('partials/head.ejs') %>
+</head> 
+  
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <h1 class="titlu-postare"><%= postare.titlu %><span>(<%= postare.data.toDateString() %>)</span>
+          <button type="button" class="btn btn-light" onclick="window.location.href='/editare_postare/<%= postare.id %>';">Edit</button>
+          <button type="button" class="btn btn-light" onclick="window.location.href='/sterge_postare/<%= postare.id %>';">Sterge</button></h1>
+        <p class="creator-postare"><%= postare.creator %></p>
+
+        <p class="content"><%= postare.continut %></p>
+    </div>
+<body>
+</body> 
+</html>

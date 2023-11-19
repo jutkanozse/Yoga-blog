@@ -1,0 +1,38 @@
+.navbar-brand {
+    padding-left: 20px;
+}
+
+.list-group-item a, .card-body .card-link {
+    text-decoration: none;
+}
+
+.list-group-item span {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.card-title span {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+div.row {
+    margin: 25px;
+}
+
+.titlu-postare span {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.creator-postare {
+    margin-left: 30px;
+}
+
+.content {
+    font-size: 13px;
+}
+
+.container form input {
+    margin: 20px;
+}

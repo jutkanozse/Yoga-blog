@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <%- include('partials/head.ejs') %>
+</head> 
+  
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <div id="listaCategorie">
+        <div class="row">
+        <% for(let i=0; i < categorii.length; i++) {%>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://th.bing.com/th/id/OIP.IPBF2m2dxFQSQB-lqgY_cQHaEK?w=287&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/categorie/<%= categorii[i].id %>"><%= categorii[i].titlu %></a></h5>
+                        <p class="card-text"><%= postari[categorii[i].titlu].length %> postari</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <% for(let j = 0; j < (postari[categorii[i].titlu].length > 3 ? 3 : postari[categorii[i].titlu].length); j++) { %>
+                            <li class="list-group-item"><a href="/postare/<%= postari[categorii[i].titlu][j].id %>" class="text-info"><%= postari[categorii[i].titlu][j].titlu %></a><span>(<%= postari[categorii[i].titlu][j].data.toDateString() %>)</span></li>
+                        <% } %>
+                    </ul>
+                    <div class="card-body">
+                        <a href="/editare_categorie/<%= categorii[i].id %>" class="card-link">Edit</a>
+                        <a href="/editare_categorie/<%= categorii[i].id %>" class="card-link">Sterge</a>
+                    </div>
+                </div>
+            </div>
+              
+            <% if(i > 0 && i % 2 == 0){ %>
+                </div>
+                <div class="row">
+            <% } %>
+        <% } %>
+        </div>
+    </div>
+</body> 
+</html>

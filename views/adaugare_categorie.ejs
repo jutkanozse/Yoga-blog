@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <%- include('partials/head.ejs') %>
+</head> 
+  
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <h3 class="text-center">Adauga categorie</h3>
+    <form method="POST" action="/salveaza_categorie">
+        <label for="titlu">Titlu:</label>
+        <input type="text" id="titlu" name="titlu">
+        <button type="submit">Adauga</button>
+    </form>
+</body> 
+</html>

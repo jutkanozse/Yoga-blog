@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <%- include('partials/head.ejs') %>
+</head> 
+  
+<body>
+    <%- include('partials/header.ejs') %>
+    <h3 class="text-center">Adauga postare</h3>
+    <div class="container">
+        <form method="POST" action="/salveaza_postare">
+            <label for="titlu">Titlu:</label>
+            <input type="text" id="titlu" name="titlu"><br>
+            <label for="categorie">Categorie:</label>
+            <select id="categorie" name="categorie">
+                <% for (let i = 0; i < categorii.length; i++) { %>
+                    <option value="<%= categorii[i].titlu %>"><%= categorii[i].titlu %></option>
+                <% } %>
+            </select><br>
+            <label for="creator">Creator:</label>
+            <input type="text" id="creator" name="creator"><br>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data"><br>
+            <label for="continut">Continut:</label>
+            <textarea id="continut" name="continut" cols="50" rows="10"></textarea><br>
+            <button type="submit">Adauga</button>
+        </form>
+    </div>
+</body> 
+</html>

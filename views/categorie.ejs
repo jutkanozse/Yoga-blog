@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <%- include('partials/head.ejs') %>
+</head> 
+  
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <h1 class="text-center"><%= categorie.titlu %>
+            <button type="button" class="btn btn-light" onclick="window.location.href='/editare_categorie/<%= categorie.id %>';">Edit</button>
+            <button type="button" class="btn btn-light" onclick="window.location.href='/sterge_categorie/<%= categorie.id %>';">Sterge</button></h1>
+        </h1>
+
+        <div id="listaCategorie">
+            <div class="row">
+            <% for(var i=0; i < postari.length; i++) {%>
+    
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://th.bing.com/th/id/OIP.NMMLaz8gq5c0R1JGQ0BNFgHaE8?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/postare/<%= postari[i].id %>"><%= postari[i].titlu %></a><span>(<%= postari[i].data.toDateString(); %>)</span></h5>
+                            <p class="card-text"><%= postari[i].continut %></p>
+                        </div>
+                        <div class="card-body">
+                            <a href="/editare_postare/<%= postari[i].id %>" class="card-link">Edit</a>
+                            <a href="/sterge_postare/<%= postari[i].id %>" class="card-link">Sterge</a>
+                        </div>
+                    </div>
+                </div>
+                  
+                <% if(i > 0 && i % 2 == 0){ %>
+                    </div>
+                    <div class="row">
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+<body>
+</body> 
+</html>
